@@ -2,16 +2,11 @@
 # 2026-02-26 
 # Loops
 
-numbers = [1, 2, 3, 4]
+my_dict = {"Miguel": "Noob"}
 
-total = 0
-product = 1
+my_dict.update(Programmer="Master")
 
-for a_number in numbers:
-    product *= a_number
-    total += a_number
+print(my_dict)
 
-print(f"Product: {product}")
-print(f"Sum: {total}")
 
 
