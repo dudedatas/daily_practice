@@ -1,3 +1,8 @@
+"""
+Date: 2026-04-02
+Practice 
+"""
+
 
 import random
 import math
