@@ -1,27 +1,22 @@
 # 3-5-2026
 # Certification Practice
 
-def feet_to_meters(feet):
-    meters = feet * 0.3048
-    return print(f"{feet} feet is {meters} meters.")
+import csv
 
-def length_of_list(some_list):
-    count = 0
-    for i in some_list:
-        count +=1
-    return count
+states = [ {'state': 'California', 'capital': 'Sacramento', 'year_admitted': 1850},
+           {'state': 'New York', 'capital': 'Albany', 'year_admitted': 1788},
+           {'state': 'Texas', 'capital': 'Austin', 'year_admitted': 1845} ]
 
-
-my_dict = {"a":1}
-
-my_dict.update(b=2, c=3, d=4)
-
-def string_counter(string):
-    length = len(string)
-    print(f"The length of the string is {length}")
-    return length
+states[0]["capital"] = "Merced"
+states.append({'state': 'Nevada', 'capital': 'Carson City', 'Year Admitted': 1864})
 
 
+f = open("/Users/mike/Downloads/employees.csv")
+rows = csv.DictReader(f)
+max_sal = []
+for row in rows:
+    max_sal.append(row['Salary'])
 
-string_counter("How many characters are in this sentence that is an overglorified string")
+print(max(max_sal))
 
+f.close()
