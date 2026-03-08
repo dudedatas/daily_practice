@@ -1,5 +1,6 @@
 # 3-6-2026 
 # Hogg exercise 1.4.27
+# Monte Carlo
 
 import random
 
@@ -12,7 +13,10 @@ for i in range(10000):
         wins += 1
     draws += 1
 
-ratio = wins/draws
-print(ratio)
+ratio = round(wins/draws, 2)
+upper_bound = round(ratio + 1.96*((ratio*(1-ratio))/draws)**(1/2), 4)
+lower_bound = round(ratio - 1.96*((ratio*(1-ratio))/draws)**(1/2), 4)
 
+print(f"We find the probability to be {ratio}")
+print(f"With 95% confidence, we are sure the probability is between {lower_bound} and {upper_bound}.")
     
