@@ -1,42 +1,26 @@
 import random
-import math
 
-numbers = []
+population = [round(random.uniform(0,300), 4) for _ in range(10000)]
 
-for i in range(1000000):
-    i = random.randrange(-1000,100)
-    numbers.append(i)
+true_mu =  round(sum(population) / len(population), 4)
 
-x_bar = sum(numbers) / len(numbers)
+xbars = []
 
-residual = []
-for i in numbers:
-    i = (i - x_bar)**2
-    residual.append(i)
 
-residual_sum = sum(residual)
-no_bessel = round(residual_sum / len(numbers), 4)
-bessel = round(residual_sum / (len(numbers) - 1), 4)
-print(f"Bessel: {bessel} | No Bessel: {no_bessel}")
+sample_size = range(1000)
 
-mini_set = []
-for i in range(10):
-    i = random.choice(numbers)
-    mini_set.append(i)
+for i in sample_size:
 
-mini_xbar = sum(mini_set) / len(mini_set)
+    sample = random.choices(population, k=100)
+    x_bar = round(sum(sample) / len(sample), 4)
+    xbars.append(x_bar)
 
-mini_residual = []
-for i in mini_set:
-    i = (i - mini_xbar)**2
-    mini_residual.append(i)
+avg_xbars = round(sum(xbars) / len(sample_size), 4)
 
-mini_sum = sum(mini_residual)
 
-mini_no_bessel = round( mini_sum/ len(mini_set), 4)
-mini_bessel = round(mini_sum/ (len(mini_set) - 1), 4)
 
-print(f"Mini Bessel: {mini_bessel} | Mini No Bessel: {mini_no_bessel}")
 
+print(true_mu, "\n")
+print(avg_xbars)
 
 
