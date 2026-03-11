@@ -1,22 +1,23 @@
-# 3-5-2026
-# Certification Practice
+import builtins
 
-import csv
+my_dictionary = {"key1": 1, "key2": 2}
 
-states = [ {'state': 'California', 'capital': 'Sacramento', 'year_admitted': 1850},
-           {'state': 'New York', 'capital': 'Albany', 'year_admitted': 1788},
-           {'state': 'Texas', 'capital': 'Austin', 'year_admitted': 1845} ]
+k_list = ["key2", "key3", "key4", "key5"]
 
-states[0]["capital"] = "Merced"
-states.append({'state': 'Nevada', 'capital': 'Carson City', 'Year Admitted': 1864})
+for i in k_list:
 
+    if i in my_dictionary.keys():
+        my_dictionary[i] = my_dictionary[i] + 1
 
-f = open("/Users/mike/Downloads/employees.csv")
-rows = csv.DictReader(f)
-max_sal = []
-for row in rows:
-    max_sal.append(row['Salary'])
+    else:
+        my_dictionary[i] = 0
 
-print(max(max_sal))
+l = dir(str)
 
-f.close()
+counter = 0
+
+for function in dir(str):
+    if function.startswith("is"):
+        counter += 1
+
+print(counter)
