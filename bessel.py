@@ -1,3 +1,7 @@
+# 3-8-2026
+# Bessel correction simulation
+# exploring degrees of freedom
+
 import random
 
 #population

@@ -12,12 +12,4 @@ for i in k_list:
     else:
         my_dictionary[i] = 0
 
-l = dir(str)
 
-counter = 0
-
-for function in dir(str):
-    if function.startswith("is"):
-        counter += 1
-
-print(counter)
